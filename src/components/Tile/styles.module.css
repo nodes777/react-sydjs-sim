@@ -28,3 +28,13 @@
   justify-content: center;
   align-items: center;
 }
+
+.tile:hover {
+  cursor: pointer;
+  background-color: #005a00;
+}
+
+.centeredTile:hover {
+  cursor: pointer;
+  background-color: #005a00;
+}
