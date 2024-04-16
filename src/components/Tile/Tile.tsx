@@ -1,8 +1,8 @@
 import styles from "./styles.module.css";
 import { Stage, TileI } from "../../createTiles";
 import { Seed } from "../Plants/Seed/Seed";
-import { Flower } from "../Plants/Flower/Flower";
-import { Sprout } from "../Plants/Sprout/Sprout";
+import { Tree } from "../Plants/Tree/Tree";
+import { Sapling } from "../Plants/Sapling/Sapling";
 import { useState } from "react";
 
 const determineNextGrowthStage = (stage: Stage | null): Stage | null => {
@@ -10,11 +10,11 @@ const determineNextGrowthStage = (stage: Stage | null): Stage | null => {
     case null:
       return Stage.Seed;
     case Stage.Seed:
-      return Stage.Sprout;
-    case Stage.Sprout:
-      return Stage.Flower;
-    case Stage.Flower:
-      return Stage.Flower;
+      return Stage.Sapling;
+    case Stage.Sapling:
+      return Stage.Tree;
+    case Stage.Tree:
+      return Stage.Tree;
     default:
       return stage;
   }
@@ -44,12 +44,12 @@ export const Tile = (props: {
         switch (tile.stage) {
           case Stage.Seed:
             return <Seed />;
-          case Stage.Sprout:
-            return <Sprout />;
-          case Stage.Flower:
-            return <Flower />;
+          case Stage.Sapling:
+            return <Sapling />;
+          case Stage.Tree:
+            return <Tree />;
           default:
-            return tile.title;
+            return; //tile.title;
         }
       })()}
     </div>

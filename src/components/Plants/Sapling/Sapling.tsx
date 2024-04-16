@@ -1,7 +1,7 @@
-import styles from "../styles.module.css";
+import styles from "./styles.module.css";
 import { useEffect, useState } from "react";
 
-export const Flower = () => {
+export const Sapling = () => {
   const [isAnimating, setIsAnimating] = useState(true);
   useEffect(() => {
     const timeoutId = setTimeout(() => setIsAnimating(false), 1000);
@@ -10,6 +10,8 @@ export const Flower = () => {
   }, []);
 
   return (
-    <div className={isAnimating ? styles.plantAnimate : styles.plant}>🌼</div>
+    <div className={isAnimating ? styles.saplingAnimate : styles.sapling}>
+      🌿
+    </div>
   );
 };

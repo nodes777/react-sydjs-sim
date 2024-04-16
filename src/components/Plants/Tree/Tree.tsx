@@ -1,7 +1,7 @@
 import styles from "../styles.module.css";
 import { useEffect, useState } from "react";
 
-export const Sprout = () => {
+export const Tree = () => {
   const [isAnimating, setIsAnimating] = useState(true);
   useEffect(() => {
     const timeoutId = setTimeout(() => setIsAnimating(false), 1000);
@@ -10,6 +10,6 @@ export const Sprout = () => {
   }, []);
 
   return (
-    <div className={isAnimating ? styles.plantAnimate : styles.plant}>🌾</div>
+    <div className={isAnimating ? styles.plantAnimate : styles.plant}>🌲</div>
   );
 };

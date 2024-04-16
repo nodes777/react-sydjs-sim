@@ -1,0 +1,22 @@
+.sapling {
+  font-size: xx-large;
+  transform: rotateZ(-80deg) rotateX(-18deg) scale(1.2) skewY(-18deg);
+  cursor: default;
+}
+
+.saplingAnimate {
+  font-size: xx-large;
+  transform: rotateZ(-80deg) rotateX(-18deg) scale(1.2) skewY(-18deg);
+  cursor: default;
+  animation: sapling-appear 200ms cubic-bezier(0.235, 0.415, 0.8, 1.575)
+    forwards;
+}
+
+@keyframes sapling-appear {
+  from {
+    transform: rotateZ(-80deg) rotateX(-18deg) skewY(-18deg) scale(0);
+  }
+  to {
+    transform: rotateZ(-80deg) rotateX(-18deg) skewY(-18deg) scale(1.2);
+  }
+}

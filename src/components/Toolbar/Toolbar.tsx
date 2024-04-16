@@ -7,7 +7,7 @@ export const Toolbar = (props: {
 }) => {
   return (
     <div className={styles.toolbar}>
-      <label htmlFor="isRaining">Is Raining</label>
+      <label htmlFor="isRaining">Is Snowing</label>
       <input
         type="checkbox"
         id="isRaining"
