@@ -1,12 +1,12 @@
-.sapling {
+.sapling svg {
   font-size: xx-large;
-  transform: rotateZ(-80deg) rotateX(-18deg) scale(1.2) skewY(-18deg);
+  transform: rotateZ(-80deg) rotateX(-18deg) scale(2.2) skewY(-20deg);
   cursor: default;
 }
 
-.saplingAnimate {
+.saplingAnimate svg {
   font-size: xx-large;
-  transform: rotateZ(-80deg) rotateX(-18deg) scale(1.2) skewY(-18deg);
+  transform: rotateZ(-80deg) rotateX(-18deg) scale(2.2) skewY(-20deg);
   cursor: default;
   animation: sapling-appear 200ms cubic-bezier(0.235, 0.415, 0.8, 1.575)
     forwards;
@@ -17,6 +17,6 @@
     transform: rotateZ(-80deg) rotateX(-18deg) skewY(-18deg) scale(0);
   }
   to {
-    transform: rotateZ(-80deg) rotateX(-18deg) skewY(-18deg) scale(1.2);
+    transform: rotateZ(-80deg) rotateX(-18deg) skewY(-20deg) scale(2.2);
   }
 }
