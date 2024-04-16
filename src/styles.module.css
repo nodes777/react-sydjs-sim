@@ -1,0 +1,12 @@
+.tileContainer {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  display: flex;
+
+  justify-content: center;
+  box-sizing: border-box;
+  transform: scaleY(0.5);
+
+  user-select: none;
+}

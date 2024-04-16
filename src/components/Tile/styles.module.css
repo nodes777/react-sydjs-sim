@@ -1,0 +1,30 @@
+.tile {
+  position: absolute;
+  border: 1px solid rgba(223, 214, 167, 0.5);
+  box-sizing: border-box;
+  transform: rotate(45deg);
+  width: 64px;
+  height: 64px;
+  background-color: #008000;
+  cursor: default;
+  box-shadow: 16px 16px 8px 6px #9c6615;
+
+  display: flex;
+  justify-content: center;
+}
+
+.centeredTile {
+  position: absolute;
+  border: 1px solid rgba(223, 214, 167, 0.5);
+  box-sizing: border-box;
+  transform: rotate(45deg);
+  width: 64px;
+  height: 64px;
+  background-color: green;
+  cursor: default;
+  box-shadow: 16px 16px 8px 6px #9c6615;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

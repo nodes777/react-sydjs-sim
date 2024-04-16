@@ -1,0 +1,21 @@
+.plant {
+  font-size: xx-large;
+  transform: rotateZ(-45deg) rotateX(-20deg) scaleY(1.5);
+  cursor: default;
+}
+
+.plantAnimate {
+  font-size: xx-large;
+  transform: rotateZ(-45deg) rotateX(-20deg) scaleY(1.5);
+  cursor: default;
+  animation: plant-appear 200ms cubic-bezier(0.235, 0.415, 0.8, 1.575) forwards;
+}
+
+@keyframes plant-appear {
+  from {
+    transform: rotateZ(-45deg) rotateX(-20deg) scale(0);
+  }
+  to {
+    transform: rotateZ(-45deg) rotateX(-20deg) scaleY(1.5);
+  }
+}
