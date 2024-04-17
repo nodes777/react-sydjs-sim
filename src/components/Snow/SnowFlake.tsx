@@ -1,21 +1,21 @@
 import { useState } from "react";
 import styles from "./styles.module.css";
 
-export const RainDrop = (props: {
+export const snowFlake = (props: {
   drop: { top: number; left: number; rate: number };
 }) => {
-  const [rainDrop, setRainDrop] = useState(props.drop);
+  const [snowFlake, setsnowFlake] = useState(props.drop);
 
   const step = () => {
-    const { top, left, rate } = rainDrop;
+    const { top, left, rate } = snowFlake;
     if (top > window.innerHeight || left < 0) {
-      setRainDrop({
+      setsnowFlake({
         top: 0,
         left: Math.random() * 2 * window.innerWidth,
         rate,
       });
     } else {
-      setRainDrop({ top: top + rate, left: left - rate, rate });
+      setsnowFlake({ top: top + rate, left: left - rate, rate });
     }
 
     requestAnimationFrame(step);
@@ -24,10 +24,10 @@ export const RainDrop = (props: {
   requestAnimationFrame(step);
   return (
     <div
-      className={styles.rainDrop}
+      className={styles.snowFlake}
       style={{
-        left: `${rainDrop.left}px`,
-        top: `${rainDrop.top}px`,
+        left: `${snowFlake.left}px`,
+        top: `${snowFlake.top}px`,
       }}
     ></div>
   );

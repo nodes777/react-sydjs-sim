@@ -1,25 +1,25 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 import styles from "./styles.module.css";
-import { RainDrop } from "./Raindrop";
+import { snowFlake } from "./SnowFlake";
 
-const generateRainDrops = () => {
-  const newRainDrops = [];
+const generatesnowFlakes = () => {
+  const newsnowFlakes = [];
   for (let i = 0; i < 1000; i++) {
     const left = Math.random() * 2 * window.innerWidth;
     const top = Math.random() * window.innerHeight;
     const rate = Math.random() * 4 + 1;
 
-    // Create raindrop object with initial state
-    newRainDrops.push({ top, left, rate });
+    // Create snowFlake object with initial state
+    newsnowFlakes.push({ top, left, rate });
   }
-  return newRainDrops;
+  return newsnowFlakes;
 };
 
-export const Rain = () => {
-  const [rainDrops, setRainDrops] = useState<
+export const Snow = () => {
+  const [snowFlakes, setsnowFlakes] = useState<
     { top: number; left: number; rate: number }[]
-  >(generateRainDrops());
+  >(generatesnowFlakes());
 
   const snowRef = useRef<number>();
 
@@ -30,17 +30,17 @@ export const Rain = () => {
   }, []);
 
   const step = () => {
-    // const newDrops = rainDrops.map((rainDrop) => {
-    //   const { top, left, rate } = rainDrop;
+    // const newDrops = snowFlakes.map((snowFlake) => {
+    //   const { top, left, rate } = snowFlake;
     //   if (top > window.innerHeight || left < 0) {
     //     return { top: 0, left: Math.random() * 2 * window.innerWidth, rate };
     //   } else {
     //     return { top: top + rate, left: left - rate, rate };
     //   }
     // });
-    setRainDrops((prevRainDrops) =>
-      prevRainDrops.map((rainDrop) => {
-        const { top, left, rate } = rainDrop;
+    setsnowFlakes((prevsnowFlakes) =>
+      prevsnowFlakes.map((snowFlake) => {
+        const { top, left, rate } = snowFlake;
         if (top > window.innerHeight || left < 0) {
           return { top: 0, left: Math.random() * 2 * window.innerWidth, rate };
         } else {
@@ -53,14 +53,14 @@ export const Rain = () => {
   };
 
   return (
-    <div className={styles.rainContainer}>
-      {rainDrops.map((rainDrop, i) => (
+    <div className={styles.SnowContainer}>
+      {snowFlakes.map((snowFlake, i) => (
         <div
           key={i}
-          className={styles.rainDrop}
+          className={styles.snowFlake}
           style={{
-            left: `${rainDrop.left}px`,
-            top: `${rainDrop.top}px`,
+            left: `${snowFlake.left}px`,
+            top: `${snowFlake.top}px`,
           }}
         />
       ))}

@@ -1,4 +1,4 @@
-.rainContainer {
+.SnowContainer {
   position: absolute;
   top: 0;
   left: 0;
@@ -6,7 +6,7 @@
   height: 100vh;
 }
 
-.rainDrop {
+.snowFlake {
   position: absolute;
   width: 2px;
   height: 2px;
