@@ -14,3 +14,12 @@
   background-color: white;
   z-index: 2;
 }
+
+.snowFlake {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 2;
+}

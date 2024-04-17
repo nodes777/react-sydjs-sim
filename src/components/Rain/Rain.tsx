@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 import styles from "./styles.module.css";
 import { RainDrop } from "./Raindrop";
+import { Snowflake } from "./Snowflake";
 
 export const Rain = () => {
   const [rainDrops, setRainDrops] = useState<
@@ -58,9 +59,16 @@ export const Rain = () => {
 
   return (
     <div className={styles.rainContainer}>
+      {" "}
+      asdasdsad
       {rainDrops.map((rainDrop, i) => (
-        <RainDrop key={i} drop={rainDrop} />
+        // <RainDrop key={i} drop={rainDrop} />
+        <Snowflake key={i} />
       ))}
+      {/* create 1000 snowflakes */}
+      {/* {Array.from({ length: 1000 }).map((_, i) => (
+        <Snowflake key={i} />
+      ))} */}
     </div>
   );
 };
