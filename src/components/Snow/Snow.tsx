@@ -3,23 +3,23 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import styles from "./styles.module.css";
 import { snowFlake } from "./SnowFlake";
 
-const generatesnowFlakes = () => {
-  const newsnowFlakes = [];
+const generateSnowFlakes = () => {
+  const newSnowFlakes = [];
   for (let i = 0; i < 1000; i++) {
     const left = Math.random() * 2 * window.innerWidth;
     const top = Math.random() * window.innerHeight;
     const rate = Math.random() * 4 + 1;
 
     // Create snowFlake object with initial state
-    newsnowFlakes.push({ top, left, rate });
+    newSnowFlakes.push({ top, left, rate });
   }
-  return newsnowFlakes;
+  return newSnowFlakes;
 };
 
 export const Snow = () => {
-  const [snowFlakes, setsnowFlakes] = useState<
+  const [snowFlakes, setSnowFlakes] = useState<
     { top: number; left: number; rate: number }[]
-  >(generatesnowFlakes());
+  >(generateSnowFlakes());
 
   const snowRef = useRef<number>();
 
@@ -38,7 +38,7 @@ export const Snow = () => {
     //     return { top: top + rate, left: left - rate, rate };
     //   }
     // });
-    setsnowFlakes((prevsnowFlakes) =>
+    setSnowFlakes((prevsnowFlakes) =>
       prevsnowFlakes.map((snowFlake) => {
         const { top, left, rate } = snowFlake;
         if (top > window.innerHeight || left < 0) {
@@ -53,7 +53,7 @@ export const Snow = () => {
   };
 
   return (
-    <div className={styles.SnowContainer}>
+    <div className={styles.snowContainer}>
       {snowFlakes.map((snowFlake, i) => (
         <div
           key={i}
