@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import "./App.css";
 import styles from "./styles.module.css";
 import { Toolbar } from "./components/Toolbar/Toolbar";
-import { Rain } from "./components/Rain/Rain";
+import { Snow } from "./components/Snow/Snow";
 import { TileGrid } from "./components/TileGrid/TileGrid";
 import { createTiles } from "./createTiles";
 
 function App() {
-  const [isRaining, setIsRaining] = useState(false);
+  const [isSnowing, setIsSnowing] = useState(false);
   return (
     <>
-      <Toolbar setIsRaining={setIsRaining} isRaining={isRaining} />
-      {isRaining && <Rain />}
+      <Toolbar setIsSnowing={setIsSnowing} isSnowing={isSnowing} />
+      {isSnowing && <Snow />}
       <div className={styles.tileContainer}>
         <TileGrid tiles={createTiles()} />
       </div>

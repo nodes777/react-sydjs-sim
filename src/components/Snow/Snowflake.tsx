@@ -12,19 +12,21 @@ export const Snowflake = () => {
 
   useEffect(() => {
     const animate = () => {
-      if (snowflake.top > window.innerHeight || snowflake.left < 0) {
-        setSnowflake((prevSnowflake) => ({
-          ...prevSnowflake,
-          top: window.innerHeight,
-          left: Math.random() * 2 * window.innerWidth,
-        }));
-      } else {
-        setSnowflake((prevSnowflake) => ({
-          ...prevSnowflake,
-          top: prevSnowflake.top + prevSnowflake.rate,
-          left: prevSnowflake.left - prevSnowflake.rate,
-        }));
-      }
+      setSnowflake((prevSnowflake) => {
+        if (prevSnowflake.top > window.innerHeight || prevSnowflake.left < 0) {
+          return {
+            rate: prevSnowflake.rate,
+            top: 0,
+            left: Math.random() * 2 * window.innerWidth,
+          };
+        } else {
+          return {
+            rate: prevSnowflake.rate,
+            top: prevSnowflake.top + prevSnowflake.rate,
+            left: prevSnowflake.left - prevSnowflake.rate,
+          };
+        }
+      });
 
       // Cancel previous frame before scheduling a new one
       if (animationFrameId !== null) {
